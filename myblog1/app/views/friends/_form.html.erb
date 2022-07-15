@@ -1,0 +1,37 @@
+<%= form_with(model: friend) do |form| %>
+  <% if friend.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+        <% friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :Ho_va_ten, class:"form-control", placeholder:"Họ và tên" %>
+    <br>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :Email, class:"form-control", placeholder:"Email" %>
+    <br>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :Phone, class:"form-control", placeholder:"Số điện thoại" %>
+    <br>
+  </div>
+
+  <div class="field form-group">
+    <%= form.date_field :Sinh_nhat, class:"form-control", placeholder:"Ngày tháng năm sinh" %>
+    <br>
+  </div>
+
+  <div class="submit">
+    <%= form.submit class:"btn btn-secondary" %>
+  </div>
+<% end %>

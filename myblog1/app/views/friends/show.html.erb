@@ -1,0 +1,8 @@
+<%= render @friend %>
+
+<div>
+  <%= link_to "Sửa thông tin bạn này", edit_friend_path(@friend), class:"btn btn-secondary" %>
+  <%= link_to "Trở lại danh sách bạn bè", friends_path, class:"btn btn-dark" %>
+
+  <%= button_to "Xóa bạn này ra khỏi danh sách", @friend, method: :delete %>
+</div>
